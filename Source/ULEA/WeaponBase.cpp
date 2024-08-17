@@ -21,6 +21,8 @@ AWeaponBase::AWeaponBase()
 
 	MuzzleOffset = FVector(100.0f, 0.0f, 10.0f);	// eŒû‚ÌˆÊ’u
 
+	bIsFullAuto = true;	//
+
 	MaxAmmo			= 30.0f;	// ’e‚ÌÅ‘å”
 	Ammo			= 30.0f;	// ’e”
 	StockAmmo		= 300.0f;	// ’e‚ÌŠ”

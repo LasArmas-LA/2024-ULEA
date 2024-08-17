@@ -41,8 +41,12 @@ public:		// 自クラス	継承したクラス	外部クラスで参照できる
 	void FireEffect();
 
 	// 射撃イベント
-	UFUNCTION(BlueprintImplementableEvent, BulueprintCallable, Category = "Action")
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Action")
 	void FireAction();
+
+	// フルオートかどうか
+	UFUNCTION(BlueprintPure,Category = "Weapon")
+	bool IsFullAuto();
 
 	/*
 	コンパイラに対してこの関数を「インライン化」するように指示します
@@ -88,6 +92,8 @@ public:		// 自クラス	継承したクラス	外部クラスで参照できる
 	float GetFireSpread();	// 弾速？
 
 
+
+
 protected:	// 自クラス	継承したクラス	で参照できる
 	
 	// Called when the game starts or when spawned
@@ -100,6 +106,10 @@ protected:	// 自クラス	継承したクラス	で参照できる
 	// 射撃のセット
 	UFUNCTION(BlueprintCallable, Category = "Gameplay")
 	void SetCanFire();
+
+	// フルオートかどうか
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category = "Weapon")
+	bool bIsFullAuto;
 
 private:	// 自クラス　で参照できる
 
