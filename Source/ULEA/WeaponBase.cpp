@@ -54,7 +54,7 @@ void AWeaponBase::Fire()
 	{
 		if (GetAmmo() > 0.0f)
 		{
-			FireAction();
+		/*	FireAction();*/
 
 			FireEffect();
 
@@ -84,10 +84,10 @@ void AWeaponBase::FireEffect()
 }
 
 // ŽËŒ‚ƒCƒxƒ“ƒg
-void AWeaponBase::FireAction()
-{
-
-}
+//void AWeaponBase::FireAction()
+//{
+//
+//}
 
 float AWeaponBase::GetMaxAmmo()
 {

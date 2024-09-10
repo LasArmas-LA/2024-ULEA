@@ -41,12 +41,12 @@ public:		// 自クラス	継承したクラス	外部クラスで参照できる
 	void FireEffect();
 
 	// 射撃イベント
-	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Action")
-	void FireAction();
+	//UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Action")
+	//void FireAction();
 
 	// フルオートかどうか
-	UFUNCTION(BlueprintPure,Category = "Weapon")
-	bool IsFullAuto();
+	//UFUNCTION(BlueprintPure,Category = "Weapon")
+	//bool IsFullAuto();
 
 	/*
 	コンパイラに対してこの関数を「インライン化」するように指示します
