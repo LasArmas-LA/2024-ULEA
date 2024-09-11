@@ -2,13 +2,21 @@
 
 
 #include "PlayerControllerBase.h"
+#include "EnhancedInputSubsystems.h"
 
-PlayerControllerBase::PlayerControllerBase()
+APlayerControllerBase::APlayerControllerBase()
 {
-	MaxAmmo = 30.0f;	// 弾の最大数
+
 }
 
-PlayerControllerBase::~PlayerControllerBase()
+void APlayerControllerBase::BeginPlay()
 {
+	Super::BeginPlay();
+	
+	// マッピングコンテキストの追加
+	if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(this->GetLocalPlayer()))
+	{
+		Subsystem->AddMappingContext(DefaultMappingContext, 0);
+	}
 
 }

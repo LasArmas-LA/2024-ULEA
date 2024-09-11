@@ -3,19 +3,25 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameFramework/PlayerController.h"
+#include "PlayerControllerBase.generated.h"
 
 /**
  * 
  */
-class ULEA_API PlayerControllerBase
+UCLASS()
+class ULEA_API APlayerControllerBase : public APlayerController
 {
+	GENERATED_BODY()
+	
+	UPROPERTY(Editanywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	class UInputMappingContext* DefaultMappingContext;
+
 public:
-	PlayerControllerBase();
+	APlayerControllerBase();
 
-	~PlayerControllerBase();
-
-	// セッター
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
-	float MaxAmmo;			// 弾の最大数
+protected:
+	virtual void BeginPlay();
 
 };
+
