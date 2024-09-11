@@ -5,8 +5,10 @@
 
 PlayerControllerBase::PlayerControllerBase()
 {
+	MaxAmmo = 30.0f;	// ’e‚ÌÅ‘å”
 }
 
 PlayerControllerBase::~PlayerControllerBase()
 {
+
 }

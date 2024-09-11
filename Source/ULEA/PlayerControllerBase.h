@@ -11,5 +11,11 @@ class ULEA_API PlayerControllerBase
 {
 public:
 	PlayerControllerBase();
+
 	~PlayerControllerBase();
+
+	// セッター
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
+	float MaxAmmo;			// 弾の最大数
+
 };

@@ -15,12 +15,13 @@ class ULEA_API APlayerCharacter : public AFriendCharacter
 	GENERATED_BODY()
 
 	// ˆêlÌƒJƒƒ‰‚ÌÀ‘•
-	UPROPERTY(VisibleAnywhere.BlueprintReadOnly,Category = Camera,meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category = Camera,meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FirstPersonCameraComponent;
 
 public:
 	APlayerCharacter();
 
+	// FPS—p‚Ì˜r
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Mesh)
 	class USkeletalMeshComponent* Mesh1P;
 
