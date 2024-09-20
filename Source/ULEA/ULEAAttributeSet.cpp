@@ -11,7 +11,7 @@ UULEAAttributeSet::UULEAAttributeSet()
 // アトリビュート型取得関数
 FGameplayAttribute UULEAAttributeSet::MaxSpeedAttribute()
 {
-	static FProperty* Property = FindFieldChecked<FProperty>(UULEAAttributeSet::StaticClass(), GET_MEMBER_NAME_CHECKED(UTutoAttributeSet, MaxSpeed));
+	static FProperty* Property = FindFieldChecked<FProperty>(UULEAAttributeSet::StaticClass(), GET_MEMBER_NAME_CHECKED(UULEAAttributeSet, MaxSpeed));
 	return FGameplayAttribute(Property);
 }
 

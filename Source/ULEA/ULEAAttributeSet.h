@@ -9,11 +9,11 @@
 
 
 // AttributeSet.hへのセッターとゲッター
-#define ATTRIBUTE_ACCESSORS(ClassName, PropertyName)\
-		GAMEPLAYATTRIBUTE_PROPERTY_GETTER(ClassName, ProprtyName)\
-		GAMEPLAYATTRIBUTE_VALUE_GETTER(ProprtyName)\
-		GAMEPLAYATTRIBUTE_VALUE_SETTER(ProprtyName)\
-		GAMEPLAYATTRIBUTE_VALUE_INITTER(ProprtyName)
+#define ATTRIBUTE_ACCESSORS(ClassName, PropertyName)
+#define	GAMEPLAYATTRIBUTE_PROPERTY_GETTER(ClassName, ProprtyName)
+#define	GAMEPLAYATTRIBUTE_VALUE_GETTER(ProprtyName)
+#define	GAMEPLAYATTRIBUTE_VALUE_SETTER(ProprtyName)
+#define	GAMEPLAYATTRIBUTE_VALUE_INITTER(ProprtyName)
 
 UCLASS()
 class ULEA_API UULEAAttributeSet : public UAttributeSet
