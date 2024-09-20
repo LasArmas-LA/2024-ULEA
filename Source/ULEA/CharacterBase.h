@@ -5,11 +5,11 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "AbilitySystemInterface.h"
-
+#include "ULEAAttributeSet.h"
 #include "CharacterBase.generated.h"// こいつは一番下じゃないとエラー出ます
 
 UCLASS()
-class ULEA_API ACharacterBase : public ACharacter
+class ULEA_API ACharacterBase : public ACharacter, public IAbilitySystemInterface
 {
 	GENERATED_BODY()
 
@@ -33,6 +33,12 @@ public:
 	// アビリティシステム
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Abilities, meta = (AllowPrivateAccess = "true"))
 	class UAbilitySystemComponent* AbilitySystem;
+
+	// アトリビュートセット
+	UPROPERTY()
+	UULEAAttributeSet* AttributeSet;
+
+	void HandleMaxSpeedChanged(float DeltaValue, const struct FGameplayTagContainer& EventTags);
 	
 	UAbilitySystemComponent* GetAbilitySystemComponent() const
 	{

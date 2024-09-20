@@ -8,7 +8,7 @@
 #include "ULEAAttributeSet.generated.h"
 
 
-// SttributeSet.hへのセッターとゲッター
+// AttributeSet.hへのセッターとゲッター
 #define ATTRIBUTE_ACCESSORS(ClassName, PropertyName)\
 		GAMEPLAYATTRIBUTE_PROPERTY_GETTER(ClassName, ProprtyName)\
 		GAMEPLAYATTRIBUTE_VALUE_GETTER(ProprtyName)\
@@ -23,14 +23,12 @@ class ULEA_API UULEAAttributeSet : public UAttributeSet
 public:
 	UULEAAttributeSet();
 
-	// ブループリントでアクセスできるMaxSpeedの定義（アクセサー追記）
+	// Blueprintアクセス可能としたMaxSpeed定義、ATTRIBUTE_ACCESSORSによるアクセサ追記
 	UPROPERTY(Category = "Attributes", EditAnywhere, BlueprintReadWrite)
 	FGameplayAttributeData MaxSpeed;
-	
 	ATTRIBUTE_ACCESSORS(UULEAAttributeSet, MaxSpeed);
-	FGameplayAttribute MaxSpeedAttribute(); // アトリビュート型所得関数
+	FGameplayAttribute MaxSpeedAttribute();// アトリビュート型取得関数
 
 	/** エフェクトによりアトリビュートが変化した場合のPost処理。主にUE5で直接管理しているメンバへの書き戻しを行う　*/
-
-	virtual void PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data)override;
+	virtual void PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data) override;
 };
