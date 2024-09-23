@@ -1,5 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+#include "GameFramework/CharacterMovementComponent.h"
 #include "AbilitySystemComponent.h"
 #include "CharacterBase.h"
 
@@ -12,6 +13,8 @@ ACharacterBase::ACharacterBase()
 	// アビリティシステムのコンポーネント
 	AbilitySystem = CreateDefaultSubobject<UAbilitySystemComponent>(TEXT("AbilitySystem"));
 
+	// アトリビュートの作成
+	AttributeSet = CreateDefaultSubobject<UULEAAttributeSet>(TEXT("AttributeSet"));
 }
 
 // Called when the game starts or when spawned
@@ -55,4 +58,9 @@ void ACharacterBase::PossessedBy(AController* NewController)
 	Super::PossessedBy(NewController);
 
 	AbilitySystem->RefreshAbilityActorInfo();
+}
+
+void ACharacterBase::HandleMaxSpeedChanged(float DeltaValue, const struct FGameplayTagContainer& EventTags)
+{
+	//GetCharacterMovement()->MaxWalkSpeed = AttributeSet->GetMaxSpeed();
 }

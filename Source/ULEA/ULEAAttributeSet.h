@@ -26,7 +26,7 @@ public:
 	// Blueprintアクセス可能としたMaxSpeed定義、ATTRIBUTE_ACCESSORSによるアクセサ追記
 	UPROPERTY(Category = "Attributes", EditAnywhere, BlueprintReadWrite)
 	FGameplayAttributeData MaxSpeed;
-	ATTRIBUTE_ACCESSORS(UULEAAttributeSet, MaxSpeed);
+	//ATTRIBUTE_ACCESSORS(UULEAAttributeSet, MaxSpeed);
 	FGameplayAttribute MaxSpeedAttribute();// アトリビュート型取得関数
 
 	/** エフェクトによりアトリビュートが変化した場合のPost処理。主にUE5で直接管理しているメンバへの書き戻しを行う　*/

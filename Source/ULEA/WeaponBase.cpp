@@ -29,7 +29,7 @@ AWeaponBase::AWeaponBase()
 	WeaponDamage	= 15.0f;	// 武器のダメージ
 	FireRate		= 0.5f;		// 射撃速度
 	FireRange		= 3000.0f;	// 射程距離
-	FireSpread		= 2.5f;		// 弾速？
+	FireSpeed		= 2.5f;		// 弾速？
 
 }
 
@@ -119,7 +119,7 @@ float AWeaponBase::GetFireRange()
 	return FireRange;
 }
 
-float AWeaponBase::GetFireSpread()
+float AWeaponBase::GetFireSpeed()
 {
-	return FireSpread;
+	return FireSpeed;
 }

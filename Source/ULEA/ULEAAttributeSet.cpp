@@ -4,8 +4,8 @@
 
 /** コンストラクタにより初期値設定 */
 UULEAAttributeSet::UULEAAttributeSet()
-	: MaxSpeed(400.0f)
 {
+	MaxSpeed = 400.0f;
 }
 
 // アトリビュート型取得関数
@@ -21,7 +21,7 @@ void UULEAAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallba
 
 	// 受け取ったデータから各種情報を取得
 	FGameplayEffectContextHandle Context = Data.EffectSpec.GetContext();
-	UAbilitySystemComponent* Source = Context.GetOriginalInstigaorAbilitySystemComponent();
+	//UAbilitySystemComponent* Source = Context.GetOriginalInstigaorAbilitySystemComponent();
 	const FGameplayTagContainer& SourceTags = *Data.EffectSpec.CapturedSourceTags.GetAggregatedTags();
 
 	// GameplayEffectにより指定されたアトリビュート変化値を計算t
@@ -44,7 +44,7 @@ void UULEAAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallba
 	}
 
 	// 受け取ったデータがMaxSpeedだった場合にCharacter側の最大移動スピードに反映させる
-	if (Data.EvaluatedData.Attribute == GetMaxSpeedAttribute())
+	//if (Data.EvaluatedData.Attribute == GetMaxSpeedAttribute())
 	{
 		if (TargetCharacter)
 		{

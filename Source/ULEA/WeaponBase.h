@@ -73,7 +73,7 @@ public:		// 自クラス	継承したクラス	外部クラスで参照できる
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
 	float FireRange;		// 射程距離
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
-	float FireSpread;		// 弾速？
+	float FireSpeed;		// 弾速？
 
 	// ゲッター(全て純粋関数 BlueprintPure＝純粋)
 	UFUNCTION(BlueprintPure, Category = "Weapon")
@@ -89,7 +89,7 @@ public:		// 自クラス	継承したクラス	外部クラスで参照できる
 	UFUNCTION(BlueprintPure, Category = "Weapon")
 	float GetFireRange();	// 射程距離
 	UFUNCTION(BlueprintPure, Category = "Weapon")
-	float GetFireSpread();	// 弾速？
+	float GetFireSpeed();	// 弾速？
 
 
 
@@ -110,6 +110,10 @@ protected:	// 自クラス	継承したクラス	で参照できる
 	// フルオートかどうか
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category = "Weapon")
 	bool bIsFullAuto;
+
+	// バーストかどうか
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon")
+	//bool bIsBurstAuto;
 
 private:	// 自クラス　で参照できる
 
